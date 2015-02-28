@@ -1,3 +1,5 @@
+package com.pavel.textparser.entity;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
