@@ -14,7 +14,7 @@ public class MainApplication {
 //        SentenceSplitter sentenceSplitter = new SentenceSplitter();
 //        sentenceSplitter.splitText(textManager.textToWork);
         WordSplitter wordSplitter = new WordSplitter();
-        wordSplitter.splitText("motion),");
+        wordSplitter.splitText("(!mo-ti-on),");
         System.out.println();
     }
 }
