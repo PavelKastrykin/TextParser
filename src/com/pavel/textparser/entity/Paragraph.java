@@ -1,11 +1,13 @@
 package com.pavel.textparser.entity;
 
+import com.pavel.textparser.splitter.ParagraphSplitter;
+
 import java.util.List;
 
 public class Paragraph implements TextDividable {
 
-    protected List<DividedText> arrayOfSubs;
-    private ParagraphSplitter paragraphSplitter;
+    protected List<TextDividable> arrayOfSubs;
+    private ParagraphSplitter paragraphSplitter = new ParagraphSplitter();
 
     public Paragraph(String value){
         this.arrayOfSubs = paragraphSplitter.splitText(value);
@@ -14,7 +16,7 @@ public class Paragraph implements TextDividable {
     @Override
     public String merge(){
         StringBuilder sb = new StringBuilder();
-        for (DividedText x : this.arrayOfSubs){
+        for (TextDividable x : this.arrayOfSubs){
             sb.append(x.merge());
         }
         return sb.toString();

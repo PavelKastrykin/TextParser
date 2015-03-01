@@ -1,6 +1,5 @@
-import com.pavel.textparser.entity.SentenceSplitter;
-import com.pavel.textparser.entity.TextManager;
-import com.pavel.textparser.entity.WordSplitter;
+import com.pavel.textparser.entity.DividedText;
+import com.pavel.textparser.logics.TextManager;
 
 import java.io.IOException;
 
@@ -8,13 +7,12 @@ import java.io.IOException;
 public class MainApplication {
 
     public static void main(String[] args) throws IOException{
-//        TextManager textManager = new TextManager();
-//        textManager.readFile("d://1.txt");
-//        textManager.replaceSpaceEnter();
-//        SentenceSplitter sentenceSplitter = new SentenceSplitter();
-//        sentenceSplitter.splitText(textManager.textToWork);
-        WordSplitter wordSplitter = new WordSplitter();
-        wordSplitter.splitText("(!mo-ti-on),");
-        System.out.println();
+
+        TextManager textManager = new TextManager();
+        String text = textManager.readFile("d:/1.txt");
+        DividedText dividedText = new DividedText(text);
+        System.out.println(dividedText.merge());
+
+        System.out.println(dividedText.getArrayOfSubs().get(1).merge());
     }
 }

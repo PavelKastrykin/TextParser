@@ -1,4 +1,7 @@
-package com.pavel.textparser.entity;
+package com.pavel.textparser.splitter;
+
+import com.pavel.textparser.entity.TextDividable;
+import com.pavel.textparser.entity.WordComplicated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,11 +14,14 @@ public class SentenceSplitter {
         return this.sentenceSplitted;
     }
 
-    public void splitText(String string){
+    public List<TextDividable> splitText(String string){
+
+        List<TextDividable> arrayOfComplicatedWords = new ArrayList<TextDividable>();
         while (string.length() > 0){
             String textPart = string.substring(0, RegExp.matcherPatternIndex(string, RegExp.WORD_END_PATTERN) + 1);
-            sentenceSplitted.add(textPart);
+            arrayOfComplicatedWords.add(new WordComplicated(textPart));
             string = string.replaceFirst(Pattern.quote(textPart), "");
         }
+        return arrayOfComplicatedWords;
     }
 }

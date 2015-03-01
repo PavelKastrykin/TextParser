@@ -1,12 +1,9 @@
-package com.pavel.textparser.entity;
+package com.pavel.textparser.splitter;
 
-import com.pavel.textparser.entity.Code;
-import com.pavel.textparser.entity.DividedText;
-import com.pavel.textparser.entity.Paragraph;
+import com.pavel.textparser.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TextSplitter {

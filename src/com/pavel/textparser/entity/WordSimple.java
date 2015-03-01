@@ -1,7 +1,16 @@
 package com.pavel.textparser.entity;
 
-/**
- * Created by Admin on 28.02.15.
- */
-public class WordSimple {
+import javax.xml.soap.Text;
+
+public class WordSimple implements TextDividable{
+    private String wordSimple;
+
+    public WordSimple (String value){
+        this.wordSimple = value;
+    }
+
+    @Override
+    public String merge(){
+        return this.wordSimple;
+    }
 }

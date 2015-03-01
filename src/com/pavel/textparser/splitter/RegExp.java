@@ -1,4 +1,4 @@
-package com.pavel.textparser.entity;
+package com.pavel.textparser.splitter;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -8,7 +8,7 @@ public class RegExp {
     public static final String CODE_END_PATTERN = "\\}\n\\}\n|\\;\n\\}\n";
     public static final String SENTENCE_END_PATTERN = ".{1}\n|\\. ";
     public static final String WORD_END_PATTERN = " ";
-    public static final String SIMPLE_WORD_MATCH_PATTERN = "^[a-zA-Z].*[a-zA-Z]";
+    public static final String SIMPLE_WORD_MATCH_PATTERN = ".*[a-zA-Z]";
 
     public static int matcherPatternIndex(String text, String regex){
         Pattern pattern = Pattern.compile(regex);
